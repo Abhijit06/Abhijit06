@@ -51,7 +51,13 @@ section{padding:8rem 5rem;position:relative;}
 .section-label::before{content:'';width:30px;height:1px;background:var(--accent);}
 h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-0.025em;margin-bottom:1rem;line-height:1.1;}
 #about{background:var(--bg2);}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;margin-top:3rem;}
+.about-grid{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:6rem;
+  align-items:start;   /* ⭐ ensures top alignment */
+  margin-top:3rem;
+}
 .about-text p{color:var(--muted);line-height:1.9;font-size:0.85rem;margin-bottom:1.2rem;}
 .about-text p strong{color:var(--text);}
 .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem;}
@@ -59,9 +65,37 @@ h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.2rem
 .stat::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent);}
 .stat-number{font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--accent);line-height:1;margin-bottom:0.3rem;}
 .stat-label{font-size:0.68rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
-.about-visual{position:relative;display:flex;justify-content:center;}
-.avatar-wrap{width:320px;height:380px;border:1px solid var(--border);position:relative;background:linear-gradient(135deg,var(--surface) 0%,var(--bg) 100%);display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.avatar-wrap::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,255,0.05) 0%,rgba(124,58,237,0.1) 100%);}
+.about-visual{
+  position: sticky;
+  top: 90px;
+  align-self: start;      /* ⭐ forces column to top */
+  height: fit-content;    /* ⭐ prevents stretching */
+  display:flex;
+  justify-content:center;
+}
+.avatar-wrap{
+  width:320px;
+  min-height:380px;              /* ⭐ allow growth */
+  height:auto;                   /* ⭐ expands with content */
+  border:1px solid var(--border);
+  position:relative;
+  background:linear-gradient(135deg,var(--surface) 0%,var(--bg) 100%);
+  display:flex;
+  align-items:flex-start;        /* ⭐ keep code at top */
+  justify-content:center;
+  overflow:hidden;
+}
+
+.avatar-wrap::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    135deg,
+    rgba(0,229,255,0.05) 0%,
+    rgba(124,58,237,0.1) 100%
+  );
+}
 .avatar-code{font-size:0.68rem;color:rgba(0,229,255,0.3);line-height:1.8;text-align:left;padding:2rem;position:relative;}
 .avatar-code .kw{color:rgba(124,58,237,0.7);}.avatar-code .str{color:rgba(0,255,163,0.7);}.avatar-code .fn{color:rgba(0,229,255,0.7);}
 .corner-tag{position:absolute;bottom:-1px;right:-1px;background:var(--accent);color:var(--bg);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.4rem 0.8rem;}
@@ -146,7 +180,7 @@ footer p{font-size:0.68rem;color:var(--muted);}footer span{color:var(--accent);}
   <div class="orb orb2"></div>
   <div class="hero-content">
     <div class="hero-badge"><div class="status-dot"></div>Available for hire</div>
-    <h1>Full Stack<span class="line2">Developer<span class="accent">.</span></span></h1>
+    <h1>Java Backend<span class="line2">Developer<span class="accent">.</span></span></h1>
     <p class="hero-desc">I craft scalable web applications with Angular on the front and Java Spring on the back — clean architecture, solid performance, zero compromises.</p>
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">View Projects</a>
@@ -162,16 +196,16 @@ footer p{font-size:0.68rem;color:var(--muted);}footer span{color:var(--accent);}
   <h2>Professional<br>Experience</h2>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>Hey, I'm <strong>Abhijit</strong> — a full-stack developer with a passion for building well-structured, performant web applications. I specialize in <strong>Angular</strong> for the frontend and <strong>Java Spring Boot</strong> for backend services.</p>
-      <p>I believe great software is invisible — it just works. I focus on clean code, thoughtful architecture, and seamless user experiences that hold up at scale.</p>
-      <p>When I'm not writing code, I'm exploring new tech, contributing to open source, or diving deep into system design problems over a strong cup of coffee.</p>
-      <div class="about-stats">
-        <div class="stat"><div class="stat-number">2+</div><div class="stat-label">Years Experience</div></div>
-        <div class="stat"><div class="stat-number">20+</div><div class="stat-label">API's</div></div>
-        <div class="stat"><div class="stat-number">1</div><div class="stat-label">Happy Clients</div></div>
-        <div class="stat"><div class="stat-number">∞</div><div class="stat-label">Coffees Consumed</div></div>
-      </div>
-    </div>
+      <p>Hey, I'm <strong>Abhijit</strong> — a Java Backend Developer with hands-on experience building and supporting microservices architectures using <strong>Java 8</strong>, <strong>Spring Boot</strong>, and <strong>RESTful APIs</strong> within large-scale banking platforms. I focus on delivering secure, high-performance backend systems that scale reliably in distributed environments.</p>
+      <p>I have a proven track record of optimizing database queries, improving application reliability, and implementing <strong>Redis caching</strong> to reduce latency under heavy load. My work involves close integration between backend services and modern frontend applications to ensure seamless end-to-end performance.</p>
+      <p>Beyond development, I actively work with <strong>AWS</strong>, <strong>Docker</strong>, and <strong>CI/CD pipelines</strong> in Agile environments. I’m deeply interested in multithreading, system design, and object-oriented principles — always aiming to build clean, resilient software that performs at scale.</p>
+  <div class="about-stats">
+    <div class="stat"><div class="stat-number">2+</div><div class="stat-label">Years Experience</div></div>
+    <div class="stat"><div class="stat-number">20+</div><div class="stat-label">APIs Built</div></div>
+    <div class="stat"><div class="stat-number">40%</div><div class="stat-label">Latency Reduced</div></div>
+    <div class="stat"><div class="stat-number">25%</div><div class="stat-label">Query Optimized</div></div>
+  </div>
+  </div>
     <div class="about-visual reveal">
       <div class="avatar-wrap">
         <div class="avatar-code">
@@ -181,13 +215,17 @@ footer p{font-size:0.68rem;color:var(--muted);}footer span{color:var(--accent);}
 <span class="kw">export class</span> <span class="fn">AppComponent</span> {<br>
 &nbsp;&nbsp;developer = {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;name: <span class="str">'Abhijit Pratap Shrinet'</span>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;role: <span class="str">'Full Stack'</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;role: <span class="str">'Java Backend Developer'</span>,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;stack: [<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Java'</span>,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Spring Boot'</span>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'MySQL'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Angular'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Git/Github'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'MySQL'</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Angular'</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Git/Github'</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Restful APIs'</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Redis Caching'</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Docker'</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'AWS'</span>,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;],<br>
 &nbsp;&nbsp;&nbsp;&nbsp;available: <span class="kw">true</span><br>
 &nbsp;&nbsp;};<br>
