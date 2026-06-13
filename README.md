@@ -1,5 +1,5 @@
 # 💫 About Me:
-Hi there 👋<br><br>Nice to meet you, I'm Abhijit!<br><br>🔭 I’m currently working as a Java Backend Developer<br>💬 Ask me about Java, Spring Boot, Microservices, and Backend Development<br>📫 How to reach me: LinkedIn – @abhijitpratap Email - abhijit.pratap06@gmail.com <br>😄 Pronouns: He/Him<br>⚡ Fun fact: I enjoy turning complex backend problems into clean, scalable solutions.
+Hi there 👋<br><br>Nice to meet you, I'm Abhijit!<br><br>🔭 I’m currently working as a Java Backend Developer<br>💬 Ask me about Java, Spring Boot, Microservices, and Backend Development<br>📫 How to reach me: LinkedIn – @abhijitpratap , Email - abhijit.pratap06@gmail.com <br>😄 Pronouns: He/Him<br>⚡ Fun fact: I enjoy turning complex backend problems into clean, scalable solutions.
 
 
 ## 🌐 Socials:
